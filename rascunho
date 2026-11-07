@@ -1,0 +1,8 @@
+SELECT MIN (valor) FROM jogo;
+
+SELECT nome AS "Mais barato", MIN(valor) AS "preço" FROM jogo
+GROUP BY nome
+LIMIT 1;*/
+
+SELECT nome AS "Mais barato", valor AS "preço" FROM jogo
+WHERE valor = (SELECT MIN(valor) FROM jogo);
